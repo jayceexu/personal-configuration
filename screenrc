@@ -11,7 +11,7 @@ vbell off
 
 ##set a biger buffer 
 defscrollback 4096
-#设置状态栏
+#Displaying Status Bar
 hardstatus alwayslastline                                                                                                                   
 shelltitle "$|xujay"
 #hardstatus string '%{= kG}[ %{G}%c:%s %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][ %{C}(F1)New (F2)Rename (F3)Monitor (F4)Slience %{g}][%{kB} %d/%m %{w}%c %{g}]'
@@ -29,7 +29,7 @@ screen
 screen
 select 1
 
-#进行快捷键的绑定
+#Bind with shortcut
 #bindkey -k k1 screen
 #bindkey -k k2 title
 #bindkey -k k3 monitor
