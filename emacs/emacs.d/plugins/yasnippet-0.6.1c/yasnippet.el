@@ -138,10 +138,9 @@
 ;;; Code:
 
 (require 'cl)
-(require 'assoc)
+;;(require 'assoc)  ;; never required after emacs 24;; by Jian
 (require 'easymenu)
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; User customizable variables
 
