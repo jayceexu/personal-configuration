@@ -74,7 +74,6 @@
 (setq kill-ring-max 50) 
 
 ;; c/c++ style
-; 我习惯的C和C++ 风格
 (defun my-c++-mode-hook()
 ;;   (setq tab-width 4 indent-tabs-mode nil)
 ;;   (c-set-style "stroustrup")
@@ -109,7 +108,7 @@
 
 (add-to-list 'load-path
              "~/.emacs.d/plugins/misc")
-(require 'sr-speedbar)
+;;(require 'sr-speedbar)
 
 ;;ido mode
 ;;in the .emacs
@@ -137,14 +136,13 @@
 
 (require 'xcscope)
 
-;; cedt plugin
-(load-file "~/.emacs.d/plugins/cedet-1.0/common/cedet.el")
-
-(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
+;; cedt plugin  ;; deprecated already, integrated to emacs24+
+;'(load-file "~/.emacs.d/plugins/cedet-1.1/common/cedet.el")
+;;(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
 
 ;; ecb plugin
 (add-to-list 'load-path 
-             "~/.emacs.d/plugins/ecb-2.40")
+             "~/.emacs.d/plugins/ecb")
 (require 'ecb)
 ;; (setq ecb-primary-secondary-mouse-buttons 'mouse-1--C-mouse-1) ;click mouse 1 to select ecb tree
 
@@ -156,13 +154,13 @@
 
 ;; clean buffer periodically
 ;; midnight mode
-(require 'midnight)
+;;(require 'midnight)
 ;;kill buffers if they were last disabled more than 2 hours ago
 ;;(setq clean-buffer-list-delay-special 7200)
-(defvar clean-buffer-list-timer nil
-  "Stores clean-buffer-list timer if there is one. You can disable clean-buffer-list by (cancel-timer clean-buffer-list-timer).")
+;;(defvar clean-buffer-list-timer nil
+;;  "Stores clean-buffer-list timer if there is one. You can disable clean-buffer-list by (cancel-timer clean-buffer-list-timer).")
 ;; run clean-buffer-list every 12 hours
-(setq clean-buffer-list-timer (run-at-time t 43200 'clean-buffer-list))
+;;(setq clean-buffer-list-timer (run-at-time t 43200 'clean-buffer-list))
 ;; kill everything, clean-buffer-list is very intelligent at not killing
 ;; unsaved buffer.
 ;;(setq clean-buffer-list-kill-regexps
@@ -224,8 +222,8 @@
       )
 
 ;; kde-emacs 
-;; (add-to-list 'load-path "~/.emacs.d/plugins/kde-emacs")
-;; (require 'kde-emacs)
+(add-to-list 'load-path "~/.emacs.d/plugins/kde-emacs")
+(require 'kde-emacs)
 ;; (setq sourcepair-source-path    '( "." "../src" ))
 ;; (setq sourcepair-header-path    '( "." "../include"))
 ;; (setq sourcepair-recurse-ignore '( "CVS" "Obj" "Debug" "Release" ))
@@ -241,10 +239,10 @@
 (global-set-key [f4] 'igrep)
 (global-set-key [f14] 'igrep-find)  ; on the console, shift f2 gives f12 for some reason..
 (global-set-key [f5] 'query-replace-regexp)
-;; (define-key c-mode-map [(f6)] 'kde-switch-cpp-h)
-;; (define-key c++-mode-map [(f6)] 'kde-switch-cpp-h)
-;; (define-key c++-mode-map [(f16)] 'switch-to-function-def)
-;; (define-key c-mode-map [(f16)] 'switch-to-function-def)
+(define-key c-mode-map [(f6)] 'kde-switch-cpp-h)
+(define-key c++-mode-map [(f6)] 'kde-switch-cpp-h)
+(define-key c++-mode-map [(f16)] 'switch-to-function-def)
+(define-key c-mode-map [(f16)] 'switch-to-function-def)
 
 (global-set-key [f6] 'switch-cc-to-h)
 (global-set-key [f6] 'switch-c-to-h)
@@ -252,7 +250,7 @@
 (global-set-key [f17] 'makeclean)
 (global-set-key [f8]'gdb)
 (global-set-key [f9] 'semantic-symref)
-(global-set-key [f12] 'sr-speedbar-toggle)
+;;(global-set-key [f12] 'sr-speedbar-toggle)
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "C-c /") 'comment-dwim)
 (global-set-key (kbd "M-n") 'next-error)
@@ -280,3 +278,4 @@
 
 ;;(add-to-list 'default-frame-alist '(foreground-color . "#E0DFDB"))
 ;;(add-to-list 'default-frame-alist '(background-color . "#102372"))
+(semantic-mode 1)
