@@ -1,2 +1,7 @@
 This git is for tracking my personal programming configurations.
 The configurations include emacs, screen.
+
+UPDATE 02/25/2020:
+update Emacs configurations to support Emacs 26+, which removed cedet and updated ecb.
+
+
